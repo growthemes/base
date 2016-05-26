@@ -11,6 +11,9 @@ meta:
   google_site_verification: ""
   image_path: /source/images/social_image.jpg
   favicon_path: /source/images/favicon.png
+  social:
+    twitter: example
+    facebook: example
 
 static_dirs:
 - static_dir: /dist/

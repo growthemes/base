@@ -14,8 +14,8 @@ jobs:
             - grow-cache
 
       - run:
-          name: Test Build
-          command: grow build
+          name: Grow Intall
+          command: grow install
 
       - save_cache:
           key: grow-cache-{{ .Branch }}-{{ checksum "package.json" }}
@@ -34,3 +34,7 @@ jobs:
           paths:
             - extensions
             - node_modules
+
+      - run:
+        name: Test Build
+        command: grow build

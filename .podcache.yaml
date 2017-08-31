@@ -13,7 +13,9 @@ dependencies:
   - /content/pages/home.yaml
   - /content/pages/projects.md
   - /dist/css/composite/global.min.css
+  - /dist/css/composite/home.min.css
   - /dist/js/composite/global.min.js
+  - /dist/js/composite/home.min.js
   - /partials//views/partials/hero.html//views/partials/hero.html.html
   - /partials/footer/footer.html
   - /partials/header/header.html

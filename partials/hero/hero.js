@@ -1,4 +1,4 @@
-export default class Hero {
+export default class HeroPartial {
   constructor(config) {
     this.config = config || {}
 

@@ -36,5 +36,5 @@ jobs:
             - node_modules
 
       - run:
-        name: Test Build
-        command: grow build
+          name: Test Build
+          command: grow build

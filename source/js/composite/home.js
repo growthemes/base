@@ -1,3 +1,3 @@
-import Hero from '../../../partials/hero/hero';
+import HeroPartial from '../../../partials/hero/hero';
 
-new Hero({});
+new HeroPartial({});

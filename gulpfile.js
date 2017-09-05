@@ -71,7 +71,7 @@ var webpackProdConfig = extend({
 gulp.task('compile-js', function() {
   return gulp.src(config.JS_SOURCES)
       .pipe(webpackStream(
-        webpackConfig, webpack
+        webpackProdConfig, webpack
       ))
       .pipe(gulp.dest(config.JS_OUT_DIR));
 });

@@ -1,9 +1,11 @@
-<div class="partial-hero">
+<div class="hero">
   <h1>{{partial.title}}</h1>
   <div class="push">
     {{partial.subtitle}}
   </div>
+  {% if partial.cta %}
   <div>
     <a href="{{partial.cta.url}}" class="button">{{partial.cta.title}}</a>
   </div>
+  {% endif %}
 </div>

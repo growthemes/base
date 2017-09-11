@@ -3,8 +3,11 @@ $path: /{root}/
 $order: -1
 description: A basic Grow demo website.
 
+composite_files:
+- home
+
 partials:
-- partial: /views/partials/hero.html
+- partial: hero
   title: Welcome to your website
   subtitle: >-
       This is a basic demonstration that shows how to use Grow to build a few
@@ -13,5 +16,10 @@ partials:
       presentation. Some of the pages use YAML and partial templates, other
       pages just use Markdown. Try exploring.
   cta:
-    title: Learn about us 
+    title: Learn about us
     url: !g.url "/content/pages/about.md"
+- partial: hero
+  title: Grow your site
+  subtitle: >-
+      Partials are a great way to grow your site and use reusable parts across
+      pages.

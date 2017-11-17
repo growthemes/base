@@ -1,4 +1,5 @@
 .DS_Store
+.depcache.json
 dist
 build
 node_modules

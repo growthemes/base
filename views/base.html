@@ -53,7 +53,7 @@
             {% endwith %}
           {% endfor %}
         {% else %}
-          {{doc.html|safe}}
+          {{doc.formatted|safe}}
         {% endif %}
       {% endblock %}
     </div>

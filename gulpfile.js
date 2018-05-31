@@ -8,7 +8,6 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var webpack = require('webpack');
 var webpackStream = require('webpack-stream');
-var WebpackBabiliPlugin = require("babili-webpack-plugin");
 
 var config = {
   JS_SOURCE_DIR: './source/js/composite/',

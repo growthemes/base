@@ -8,13 +8,12 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var webpack = require('webpack');
 var webpackStream = require('webpack-stream');
-var WebpackBabiliPlugin = require("babili-webpack-plugin");
 
 var config = {
   JS_SOURCE_DIR: './source/js/composite/',
   JS_SOURCES: [
     './partials/**/*.js',
-    './source/js/composite/**/*.js',
+    './source/js/**/*.js',
   ],
   JS_OUT_DIR: './dist/js/composite/',
   JS_OPTIONS: {
@@ -22,10 +21,10 @@ var config = {
       mangle: false
     }
   },
-  SASS_SOURCE_DIR: './source/sass/composite/**/*.sass',
+  SASS_SOURCE_DIR: './source/sass/composite/**/*.{sass,scss}',
   SASS_SOURCES: [
-    './partials/**/*.sass',
-    './source/sass/composite/**/*.sass',
+    './partials/**/*.{sass,scss}',
+    './source/sass/**/*.{sass,scss}',
   ],
   SASS_OUT_DIR: './dist/css/composite/'
 };
@@ -92,4 +91,4 @@ gulp.task('watch-sass', function() {
 
 gulp.task('build', ['compile-js', 'compile-sass']);
 gulp.task('grow-build', ['compile-js', 'compile-sass']);
-gulp.task('default', ['watch-js', 'watch-sass']);
+gulp.task('default', ['watch-js', 'compile-sass', 'watch-sass']);

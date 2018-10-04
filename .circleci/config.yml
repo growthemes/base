@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     working_directory: ~/grow
@@ -18,9 +19,25 @@ jobs:
       - save_cache:
           key: grow-cache-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - extensions
             - node_modules
 
       - run:
           name: Test Build
           command: grow build
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+    - build
+  weekly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 0"
+          filters:
+            branches:
+              only:
+              - master
+    jobs:
+      - build

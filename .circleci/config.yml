@@ -1,5 +1,13 @@
 version: 2
 
+grow_install: &grow_install
+    name: Grow Intall
+    command: grow install
+
+grow_build: &grow_build
+    name: Grow Build
+    command: grow build
+
 jobs:
   build:
     working_directory: ~/grow
@@ -7,23 +15,24 @@ jobs:
       - image: grow/base:latest
     steps:
       - checkout
-
       - restore_cache:
           keys:
             - grow-cache-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-
-      - run:
-          name: Grow Intall
-          command: grow install
-
+      - run: *grow_install
       - save_cache:
           key: grow-cache-{{ .Branch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+      - run: *grow_build
 
-      - run:
-          name: Test Build
-          command: grow build
+  cache_free:
+    working_directory: ~/grow
+    docker:
+      - image: grow/base:latest
+    steps:
+      - checkout
+      - run: *grow_install
+      - run: *grow_build
 
 workflows:
   version: 2
@@ -40,4 +49,4 @@ workflows:
               only:
               - master
     jobs:
-      - build
+      - cache_free

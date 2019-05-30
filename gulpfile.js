@@ -46,9 +46,9 @@ var webpackConfig = {
     filename: '[name].min.js'
   }
 };
-var webpackProdConfig = extend({
+var webpackProdConfig = extend(webpackConfig, {
   mode: 'production',
-}, webpackConfig);
+});
 
 gulp.task('compile-js', function() {
   return gulp.src(config.JS_SOURCES)

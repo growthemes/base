@@ -19,6 +19,7 @@ meta:
 preprocessors:
 - kind: gulp
   build_task: grow-build
+  command: "./node_modules/gulp/bin/gulp.js"
 
 static_dirs:
 - static_dir: /static/
